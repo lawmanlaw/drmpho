@@ -13,6 +13,7 @@
 <title>Dr Mpho Elizabeth Mpofu</title>
 <meta name="description" content="Dr Mpho Elizabeth Mpofu, criminologist, sociologist and development practitioner working on gender equality, feminist accountability and ending violence against women and girls.">
 <link rel="preload" as="image" href="img/hero2-560.webp" imagesrcset="img/hero2-400.webp 400w, img/hero2-560.webp 560w" imagesizes="(max-width: 860px) 70vw, 380px" fetchpriority="high">
+<link rel="icon" href="img/falcon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Merriweather:wght@300;400&display=swap" rel="stylesheet">
@@ -156,6 +157,27 @@
   .pubs li span:not(.year) { display: block; margin-top: 6px; color: var(--muted); max-width: 62ch; }
   @media (max-width: 860px) { .pubs li { grid-template-columns: 1fr; gap: 4px; } }
 
+  /* Falcon wordmark */
+  .brand { display: inline-flex; align-items: center; gap: 10px; font-size: 18px; }
+  .falcon { width: 42px; height: 26px; fill: var(--sky); overflow: visible; }
+  .falcon .wing { transform-box: view-box; transform-origin: 32px 17px; }
+  .word { display: inline-flex; white-space: pre; }
+  .word span { display: inline-block; }
+  @media (prefers-reduced-motion: no-preference) {
+    @keyframes swoop {
+      0% { opacity: 0; transform: translate(-70px, 26px) rotate(-28deg) scale(.55); }
+      60% { opacity: 1; transform: translate(6px, -4px) rotate(6deg) scale(1.08); }
+      100% { opacity: 1; transform: none; }
+    }
+    @keyframes flap { 0%, 100% { transform: scaleX(1) scaleY(1); } 50% { transform: scaleX(.42) scaleY(1.25); } }
+    @keyframes letter { from { opacity: 0; transform: translateY(10px); filter: blur(4px); } to { opacity: 1; transform: none; filter: none; } }
+    .falcon { animation: swoop 1100ms var(--ease-out) both; }
+    .falcon .wing { animation: flap 260ms ease-in-out 4; }
+    .word span { animation: letter 520ms var(--ease-out) both; animation-delay: calc(700ms + var(--i) * 55ms); }
+    @keyframes flap-again { 0%, 100% { transform: scaleX(1) scaleY(1); } 50% { transform: scaleX(.42) scaleY(1.25); } }
+    .brand:hover .falcon .wing { animation: flap-again 260ms ease-in-out 2; }
+  }
+
   /* Motion tokens */
   :root {
     --ease-out: cubic-bezier(.22, 1, .36, 1);
@@ -262,7 +284,10 @@
 
 <header>
   <div class="wrap">
-    <a class="brand" href="#top">Dr Mpho Mpofu</a>
+    <a class="brand" href="#top" aria-label="Dr Mpho, back to top">
+      <svg class="falcon" viewBox="0 0 64 40" aria-hidden="true"><path class="wing wing-l" d="M30.5 13.2 C21 7.6 8 11 0.5 26 C9 20.5 18.5 19.6 30 22.6 Z"/><path class="wing wing-r" d="M33.5 13.2 C43 7.6 56 11 63.5 26 C55 20.5 45.5 19.6 34 22.6 Z"/><path d="M32 3 C34 3 35.2 4.8 34.9 6.8 L36.6 12.4 L36.8 22.5 L35.3 29.5 L37.6 37 L32 35.2 L26.4 37 L28.7 29.5 L27.2 22.5 L27.4 12.4 L29.1 6.8 C28.8 4.8 30 3 32 3 Z"/></svg>
+      <span class="word" aria-hidden="true"><span style="--i:0">D</span><span style="--i:1">r</span><span class="sp" style="--i:2"> </span><span style="--i:3">M</span><span style="--i:4">p</span><span style="--i:5">h</span><span style="--i:6">o</span></span>
+    </a>
     <nav aria-label="Main">
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
@@ -277,7 +302,7 @@
 
 <div id="menu" popover>
   <div class="menu-top">
-    <span class="brand">Dr Mpho Mpofu</span>
+    <span class="brand">Dr Mpho</span>
     <button class="menu-btn" popovertarget="menu" popovertargetaction="hide" aria-label="Close menu" style="display:block"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
   </div>
   <ul>
