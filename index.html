@@ -107,16 +107,15 @@
   /* Speaking gallery */
   .gallery { display: grid; grid-template-columns: 1fr 1.35fr; grid-template-rows: auto auto auto; gap: clamp(12px, 1.6vw, 20px); margin-top: 40px; }
   .gallery figure { margin: 0; overflow: hidden; position: relative; }
-  .gallery figure:first-child { grid-row: span 2; }
+  .gallery > figure:first-child { grid-row: span 2; }
   .gallery img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--slow) var(--ease-out); }
   .gallery figure:hover img { transform: scale(1.03); }
   .gallery figcaption { font-family: "Lato", sans-serif; font-size: 14px; color: var(--muted); padding-top: 10px; }
   .gallery .shot { aspect-ratio: 3 / 2; overflow: hidden; }
-  .gallery figure.wide { grid-column: 1 / -1; }
-  .gallery figure.wide .shot { aspect-ratio: 21 / 9; }
-  .gallery figure.wide img { object-position: 60% 18%; }
-  .gallery figure:first-child .shot { aspect-ratio: auto; height: calc(100% - 34px); }
-  .gallery figure:first-child img { object-position: 40% 35%; }
+  .gallery .bottom { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: inherit; }
+  .gallery figure.half .shot { aspect-ratio: 3 / 2; }
+  .gallery > figure:first-child .shot { aspect-ratio: auto; height: calc(100% - 34px); }
+  .gallery > figure:first-child img { object-position: 40% 35%; }
   .sub { font-family: "Lato", sans-serif; font-size: clamp(18px, 1rem + 0.4vw, 22px); color: var(--ink); margin: 0 0 16px; }
   .split p { margin: 0 0 16px; max-width: 62ch; }
 
@@ -312,9 +311,9 @@
   }
   @media (max-width: 700px) {
     .gallery { grid-template-columns: 1fr; grid-template-rows: auto; }
-    .gallery figure:first-child { grid-row: auto; }
-    .gallery figure:first-child .shot { aspect-ratio: 4 / 5; height: auto; }
-    .gallery figure.wide .shot { aspect-ratio: 3 / 2; }
+    .gallery > figure:first-child { grid-row: auto; }
+    .gallery > figure:first-child .shot { aspect-ratio: 4 / 5; height: auto; }
+    .gallery .bottom { grid-template-columns: 1fr; }
   }
   @media (max-width: 480px) {
     header { padding: 18px 0; }
@@ -376,7 +375,7 @@
       </div>
       <div class="hero-text">
         <h1>Sociologist, Criminologist and Development Practitioner</h1>
-        <p class="lede">Twelve years advancing gender equality, feminist accountability and the prevention of violence against women and girls across Africa and Europe</p>
+        <p class="lede">Over 13 years advancing gender equality, feminist accountability and the prevention of violence against women and girls across Africa and Europe</p>
         <a class="btn" href="#contact">Get in touch</a>
       </div>
     </div>
@@ -395,8 +394,9 @@
       <div>
         <h2 class="reveal">About Mpho</h2>
         <p class="sub">Research, strategy and accountability for gender justice</p>
-        <p>Dr Mpho Elizabeth Mpofu has spent over twelve years working across Africa and Europe on gender equality, diversity and inclusion, feminist accountability and violence against women and girls. She holds a PhD in Sociology from the University of Botswana and an MSc in International Development (Gender) from the University of Bristol.</p>
-        <p>Her work is grounded in a commitment to equity, dignity and the meaningful participation of women, girls and marginalised communities in shaping development and social change.</p>
+        <p>I am Dr Mpho Mpofu, a sociologist and international development practitioner with over 13 years of experience advancing gender equality, violence prevention, feminist accountability, social inclusion, advocacy and systems change across Africa and Europe.</p>
+        <p>My work brings together research, strategic advisory support and organisational capacity strengthening to support development organisations in addressing structural inequalities, preventing violence against women, strengthening accountability, influencing policy and practice, and advancing inclusive, evidence-informed programmes and policies.</p>
+        <p>I am committed to translating research and evidence into practical strategies that strengthen institutions, inform decision-making and contribute to more equitable and inclusive societies.</p>
 
         <div class="features">
           <div class="feature">
@@ -442,7 +442,7 @@
         <div>
           <svg viewBox="0 0 34 34" aria-hidden="true"><path d="M20 5H8v24h9"/><path d="M20 5l5 5v4M20 5v5h5"/><path d="M11 13h6M11 17h5M11 21h3"/><circle cx="23" cy="22" r="5"/><path d="M26.6 25.6L30 29"/></svg>
           <h3>Research, Evidence and Knowledge Generation</h3>
-          <p>Generating and translating qualitative research and intersectional evidence into actionable insights for policy, programming and systems change.</p>
+          <p>Generating and translating research and intersectional evidence into actionable insights for policy, programming and systems change.</p>
         </div>
         <div>
           <svg viewBox="0 0 34 34" aria-hidden="true"><path d="M17 30.5S2.5 22.5 2.5 12.3A6.8 6.8 0 0 1 17 8.6a6.8 6.8 0 0 1 14.5 3.7C31.5 22.5 17 30.5 17 30.5z"/><g transform="translate(8.6 9) scale(.7)" stroke-width="2"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></g></svg>
@@ -518,10 +518,16 @@
           <div class="shot"><img src="img/facilitate-1179.webp" srcset="img/facilitate-600.webp 600w, img/facilitate-1179.webp 1179w" sizes="(max-width: 700px) 100vw, 580px" width="1179" height="769" alt="Dr Mpofu speaking to a group gathered around her" loading="lazy" decoding="async"></div>
           <figcaption>Facilitating a group session</figcaption>
         </figure>
-        <figure class="reveal wide">
-          <div class="shot"><img src="img/panel-1400.webp" srcset="img/panel-700.webp 700w, img/panel-1400.webp 1400w" sizes="(max-width: 700px) 100vw, 1080px" width="1400" height="933" alt="Dr Mpofu speaking as a panellist at the WomeninDev conference in London" loading="lazy" decoding="async"></div>
+        <div class="bottom">
+        <figure class="reveal half">
+          <div class="shot"><img src="img/panel-1400.webp" srcset="img/panel-700.webp 700w, img/panel-1400.webp 1400w" sizes="(max-width: 700px) 100vw, 530px" width="1400" height="933" alt="Dr Mpofu speaking as a panellist at the WomeninDev conference in London" loading="lazy" decoding="async"></div>
           <figcaption>Panellist at the WomeninDev conference, London</figcaption>
         </figure>
+        <figure class="reveal half">
+          <div class="shot"><img src="img/community-1400.webp" srcset="img/community-700.webp 700w, img/community-1400.webp 1400w" sizes="(max-width: 700px) 100vw, 530px" width="1400" height="934" alt="Dr Mpofu crouching in front of a smiling group of community members outside a building" loading="lazy" decoding="async"></div>
+          <figcaption>With community members after a session</figcaption>
+        </figure>
+        </div>
       </div>
     </div>
   </section>
