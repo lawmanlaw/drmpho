@@ -147,6 +147,15 @@
   footer { background: var(--ink); color: rgba(255,255,255,.6); font-family: "Lato", sans-serif; font-size: 14px; padding: 24px 0; }
   footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 
+  /* Publications */
+  .pubs { list-style: none; padding: 0; margin: 32px 0 0; display: grid; gap: 28px; }
+  .pubs li { display: grid; grid-template-columns: minmax(160px, 220px) 1fr; gap: clamp(8px, 4vw, 48px); }
+  .pubs .year { font-family: "Lato", sans-serif; color: var(--muted); padding-top: 3px; }
+  .pubs a { font-family: "Lato", sans-serif; font-size: clamp(18px, 1rem + 0.3vw, 21px); color: var(--ink); text-decoration-color: var(--sky); text-underline-offset: 4px; transition: color var(--fast) ease; }
+  .pubs a:hover { color: var(--sky-deep); }
+  .pubs li span:not(.year) { display: block; margin-top: 6px; color: var(--muted); max-width: 62ch; }
+  @media (max-width: 860px) { .pubs li { grid-template-columns: 1fr; gap: 4px; } }
+
   /* Motion tokens */
   :root {
     --ease-out: cubic-bezier(.22, 1, .36, 1);
@@ -258,6 +267,7 @@
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
       <a href="#speaking">Speaking</a>
+      <a href="#publications">Publications</a>
       <a href="#education">Education</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -274,6 +284,7 @@
     <li><a href="#about">About</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#speaking">Speaking</a></li>
+    <li><a href="#publications">Publications</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -428,6 +439,21 @@
     </div>
   </section>
 
+  <section id="publications">
+    <div class="wrap">
+      <h2 class="reveal">Publications</h2>
+      <ul class="pubs">
+        <li class="reveal">
+          <span class="year">2021</span>
+          <div>
+            <a href="https://co-impact.org/wp-content/uploads/2021/06/Co-Impact-Consultations-Report.pdf" rel="noopener noreferrer" target="_blank">What Does it Take to Transform Gendered Systems?</a>
+            <span>Co-Impact consultations report, informing the design of Co-Impact's Gender Fund. Contributing researcher with Global Office Consulting</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
   <section id="education" class="focus">
     <div class="wrap two">
       <div>
@@ -436,25 +462,17 @@
           <li><strong>PhD, Sociology</strong><span>University of Botswana, 2023 to 2026</span></li>
           <li><strong>MSc, International Development (Gender)</strong><span>University of Bristol, 2019 to 2020, Merit</span></li>
         </ul>
-        <h2 style="margin-top:56px">Honours</h2>
-        <ul class="list">
-          <li><strong>Chevening Scholarship</strong><span>UK Foreign and Commonwealth Office, 2019. Fully funded MSc at the University of Bristol</span></li>
-          <li><strong>Top 100 Brightest Young Minds</strong><span>2017</span></li>
-          <li><strong>Gender Equity Evidence Accelerator Fellow</strong><span>Johns Hopkins Bloomberg School of Public Health, 2025 to 2026</span></li>
-        </ul>
-      </div>
-      <div>
-        <h2>Service</h2>
-        <ul class="list">
-          <li><strong>Application Review and Selection Committee</strong><span>Young African Leaders Initiative, 2016 to present</span></li>
-          <li><strong>Board Trustee</strong><span>Wellbeing for Women Africa, 2020</span></li>
-          <li><strong>Programmes Coordinator</strong><span>Dot Youth, 2014 to 2020. Developed a project for juvenile offenders in Bulawayo</span></li>
-          <li><strong>Support volunteer</strong><span>Special Olympics Canada, 2018</span></li>
-          <li><strong>Tennis Official</strong><span>Gaborone 2014 African Youth Games</span></li>
-        </ul>
         <h2 style="margin-top:56px">Languages</h2>
         <ul class="list">
           <li><strong>English and Ndebele</strong><span>Native or bilingual</span></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Honours</h2>
+        <ul class="list">
+          <li><strong>Gender Equity Evidence Accelerator Fellow</strong><span>Johns Hopkins Bloomberg School of Public Health, 2025 to 2026</span></li>
+          <li><strong>Chevening Scholarship</strong><span>UK Foreign and Commonwealth Office, 2019. Fully funded MSc at the University of Bristol</span></li>
+          <li><strong>Top 100 Brightest Young Minds</strong><span>2017</span></li>
         </ul>
       </div>
     </div>
