@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <style>
+    text { font-family: "Lato", "Helvetica Neue", Arial, sans-serif; font-weight: 700; fill: #fff; }
+    .dr { fill: #93c5e4; }
+    .bar { transform-origin: 11px 51px; animation: draw 2.4s cubic-bezier(.22,1,.36,1) infinite; }
+    @keyframes draw { 0% { transform: scaleX(0); } 40%, 100% { transform: scaleX(1); } }
+    @media (prefers-reduced-motion: reduce) { .bar { animation: none; } }
+  </style>
+  <rect width="64" height="64" rx="10" fill="#2e363a"/>
+  <text class="dr" x="11" y="26" font-size="16">Dr</text>
+  <text x="11" y="45" font-size="19" textLength="42" lengthAdjust="spacingAndGlyphs">Mpho</text>
+  <rect class="bar" x="11" y="50" width="42" height="2.5" fill="#93c5e4"/>
+</svg>
