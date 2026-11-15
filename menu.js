@@ -50,3 +50,9 @@ if (form) {
     }
   });
 }
+
+// Put the cursor in the first field when the form is opened
+const wrap = document.querySelector('.cform-wrap');
+wrap?.addEventListener('toggle', () => {
+  if (wrap.open) setTimeout(() => wrap.querySelector('#cf-name')?.focus({ preventScroll: true }), 60);
+});
