@@ -8,11 +8,11 @@
 <meta name="theme-color" content="#2e363a">
 <meta property="og:title" content="Dr Mpho Elizabeth Mpofu">
 <meta property="og:description" content="Criminologist, sociologist and development practitioner working on gender equality, feminist accountability and ending violence against women and girls.">
-<meta property="og:image" content="img/portrait-crop.jpg">
+<meta property="og:image" content="img/og.jpg">
 <meta property="og:type" content="website">
 <title>Dr Mpho Elizabeth Mpofu</title>
 <meta name="description" content="Dr Mpho Elizabeth Mpofu, criminologist, sociologist and development practitioner working on gender equality, feminist accountability and ending violence against women and girls.">
-<link rel="preload" as="image" href="img/hero-600.webp" imagesrcset="img/hero-400.webp 400w, img/hero-600.webp 600w, img/hero-813.webp 813w" imagesizes="(max-width: 860px) 80vw, 460px" fetchpriority="high">
+<link rel="preload" as="image" href="img/hero2-560.webp" imagesrcset="img/hero2-400.webp 400w, img/hero2-560.webp 560w" imagesizes="(max-width: 860px) 70vw, 380px" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Merriweather:wght@300;400&display=swap" rel="stylesheet">
@@ -75,7 +75,7 @@
   .hero-photo { align-self: end; padding-top: 96px; }
   .hero-photo img { margin-bottom: -1px; }
   .hero-photo img {
-    width: 100%; max-width: 460px;
+    width: 100%; max-width: 380px; margin-inline: auto;
     filter: drop-shadow(0 20px 40px rgba(0,0,0,.25));
   }
   .hero-text { padding: 120px 0 72px; }
@@ -100,6 +100,17 @@
   h2 { font-size: clamp(26px, 1.4rem + 1vw, 36px); margin-bottom: 20px; }
   .split { display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(40px, 6vw, 88px); align-items: center; }
   .split > img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 30%; }
+
+  /* Speaking gallery */
+  .gallery { display: grid; grid-template-columns: 1fr 1.35fr; grid-template-rows: 1fr 1fr; gap: clamp(12px, 1.6vw, 20px); margin-top: 40px; }
+  .gallery figure { margin: 0; overflow: hidden; position: relative; }
+  .gallery figure:first-child { grid-row: span 2; }
+  .gallery img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--slow) var(--ease-out); }
+  .gallery figure:hover img { transform: scale(1.03); }
+  .gallery figcaption { font-family: "Lato", sans-serif; font-size: 14px; color: var(--muted); padding-top: 10px; }
+  .gallery .shot { aspect-ratio: 3 / 2; overflow: hidden; }
+  .gallery figure:first-child .shot { aspect-ratio: auto; height: calc(100% - 34px); }
+  .gallery figure:first-child img { object-position: 40% 35%; }
   .sub { font-family: "Lato", sans-serif; font-size: clamp(18px, 1rem + 0.4vw, 22px); color: var(--ink); margin: 0 0 16px; }
   .split p { margin: 0 0 16px; max-width: 62ch; }
 
@@ -215,10 +226,15 @@
     .hero .wrap { grid-template-columns: 1fr; min-height: 0; gap: 0; }
     .hero-text { padding: 104px 0 0; order: -1; }
     .hero-photo { padding-top: 16px; }
-    .hero-photo img { margin-inline: auto; max-width: min(420px, 88%); }
+    .hero-photo img { margin-inline: auto; max-width: min(340px, 78%); }
     .split, .two { grid-template-columns: 1fr; }
     .split > img { max-width: 440px; }
     .role { grid-template-columns: 1fr; gap: 4px; }
+  }
+  @media (max-width: 700px) {
+    .gallery { grid-template-columns: 1fr; grid-template-rows: auto; }
+    .gallery figure:first-child { grid-row: auto; }
+    .gallery figure:first-child .shot { aspect-ratio: 4 / 5; height: auto; }
   }
   @media (max-width: 480px) {
     header { padding: 18px 0; }
@@ -229,7 +245,7 @@
     footer .wrap { justify-content: center; text-align: center; }
   }
   @media (hover: none) {
-    .btn:hover, .split:hover > img, .feature:hover svg, .focus-grid > div:hover svg { transform: none; }
+    .btn:hover, .split:hover > img, .gallery figure:hover img, .feature:hover svg, .focus-grid > div:hover svg { transform: none; }
   }
 </style>
 </head>
@@ -241,6 +257,7 @@
     <nav aria-label="Main">
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
+      <a href="#speaking">Speaking</a>
       <a href="#education">Education</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -256,6 +273,7 @@
   <ul>
     <li><a href="#about">About</a></li>
     <li><a href="#experience">Experience</a></li>
+    <li><a href="#speaking">Speaking</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -265,7 +283,7 @@
   <div class="hero">
     <div class="wrap">
       <div class="hero-photo">
-        <img src="img/hero-600.webp" srcset="img/hero-400.webp 400w, img/hero-600.webp 600w, img/hero-813.webp 813w" sizes="(max-width: 860px) 80vw, 460px" width="813" height="1165" alt="Dr Mpho Elizabeth Mpofu in her doctoral gown" fetchpriority="high" decoding="async">
+        <img src="img/hero2-560.webp" srcset="img/hero2-400.webp 400w, img/hero2-560.webp 560w" sizes="(max-width: 860px) 70vw, 380px" width="560" height="977" alt="Dr Mpho Elizabeth Mpofu" fetchpriority="high" decoding="async">
       </div>
       <div class="hero-text">
         <h1>Criminologist, sociologist and development practitioner</h1>
@@ -277,7 +295,7 @@
 
   <div class="band">
     <div class="wrap reveal">
-      <img src="img/headshot-208.webp" width="208" height="208" alt="" loading="lazy" decoding="async">
+      <img src="img/face-208.webp" width="208" height="208" alt="" loading="lazy" decoding="async">
       <p class="name">Gender Equity Evidence Accelerator Fellow, 2025 to 2026</p>
       <p>Johns Hopkins Bloomberg School of Public Health</p>
     </div>
@@ -309,7 +327,7 @@
         </div>
         <a class="btn dark" href="#experience">View experience</a>
       </div>
-      <img src="img/portrait-crop-800.webp" srcset="img/portrait-crop-480.webp 480w, img/portrait-crop-800.webp 800w" sizes="(max-width: 860px) 100vw, 440px" width="800" height="1000" alt="" loading="lazy" decoding="async">
+      <img src="img/stairs-900.webp" srcset="img/stairs-480.webp 480w, img/stairs-900.webp 900w" sizes="(max-width: 860px) 100vw, 440px" width="900" height="1125" alt="Dr Mpofu standing on a garden staircase" loading="lazy" decoding="async">
     </div>
   </section>
 
@@ -385,6 +403,27 @@
             <p>Founded a youth-led organisation providing youth consulting services, and coordinated its strategy and innovation.</p>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="speaking">
+    <div class="wrap">
+      <h2 class="reveal">Speaking and convenings</h2>
+      <p class="reveal" style="max-width:62ch;margin:0">Mpho shares evidence and practice on violence prevention and feminist accountability with researchers, funders and practitioners around the world.</p>
+      <div class="gallery">
+        <figure class="reveal">
+          <div class="shot"><img src="img/svri-800.webp" srcset="img/svri-480.webp 480w, img/svri-800.webp 800w" sizes="(max-width: 700px) 100vw, 420px" width="800" height="1000" alt="Dr Mpofu presenting at a podium" loading="lazy" decoding="async"></div>
+          <figcaption>Presenting at the SVRI Forum 2026, Bangkok</figcaption>
+        </figure>
+        <figure class="reveal">
+          <div class="shot"><img src="img/whatworks-1023.webp" srcset="img/whatworks-600.webp 600w, img/whatworks-1023.webp 1023w" sizes="(max-width: 700px) 100vw, 580px" width="1023" height="681" alt="Dr Mpofu speaking with a microphone beside a What Works to Prevent Violence banner" loading="lazy" decoding="async"></div>
+          <figcaption>Speaking at a What Works to Prevent Violence convening</figcaption>
+        </figure>
+        <figure class="reveal">
+          <div class="shot"><img src="img/facilitate-1179.webp" srcset="img/facilitate-600.webp 600w, img/facilitate-1179.webp 1179w" sizes="(max-width: 700px) 100vw, 580px" width="1179" height="769" alt="Dr Mpofu speaking to a group gathered around her" loading="lazy" decoding="async"></div>
+          <figcaption>Facilitating a group session</figcaption>
+        </figure>
       </div>
     </div>
   </section>
