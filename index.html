@@ -140,7 +140,7 @@
   .roles { display: grid; gap: 40px; margin-top: 40px; }
   .role { display: grid; grid-template-columns: minmax(160px, 220px) 1fr; gap: clamp(8px, 4vw, 48px); }
   .role .logo { display: flex; align-items: flex-start; padding-top: 2px; }
-  .role .logo img { height: 52px; width: auto; max-width: 180px; object-fit: contain; object-position: left center; }
+  .role .logo img { transform-origin: left center; transition: scale var(--base) var(--ease-out); height: 52px; width: auto; max-width: 180px; object-fit: contain; object-position: left center; }
   .role .logo-name { font-family: "Lato", sans-serif; font-weight: 700; color: var(--ink); font-size: 17px; }
   .role h3 { font-size: clamp(19px, 1.05rem + 0.3vw, 22px); }
   .role .org { font-family: "Lato", sans-serif; color: var(--sky-deep); margin: 2px 0 8px; }
@@ -256,6 +256,7 @@
   nav a:hover::after { transform: scaleX(1); }
   .feature:hover svg, .focus-grid > div:hover svg { transform: translateY(-3px); }
   .role:hover h3 { color: var(--sky-deep); }
+  .role:hover .logo img { scale: 1.06; }
   .split > img { transition: transform var(--slow) var(--ease-out); }
   .split:hover > img { transform: scale(1.015); }
 
@@ -301,6 +302,16 @@
         animation-range: normal, 0 600px;
       }
       @keyframes drift { to { translate: 0 60px; } }
+      @keyframes logo-in {
+        from { opacity: 0; scale: .8; translate: -16px 0; filter: grayscale(1) blur(3px); }
+        60% { filter: grayscale(1) blur(0); }
+        to { opacity: 1; scale: 1; translate: 0 0; filter: none; }
+      }
+      .role .logo img, .role .logo-name {
+        animation: logo-in linear both;
+        animation-timeline: view();
+        animation-range: entry 10% cover 35%;
+      }
     }
   }
 
