@@ -240,6 +240,16 @@
     html.io .role .logo img.in, html.io .role .logo-name.in, html.io .edu-logo.in {
       animation: logo-pop 950ms cubic-bezier(.34, 1.56, .64, 1) both;
     }
+    html.io .gallery figure, html.io .split > img, html.io .contact-grid > img { opacity: 0; animation: none; }
+    html.io .gallery figure.in, html.io .split > img.in, html.io .contact-grid > img.in {
+      animation: photo-bounce 1000ms cubic-bezier(.34, 1.56, .64, 1) both;
+    }
+    @keyframes photo-bounce {
+      0%   { opacity: 0; scale: .82; translate: 0 60px; }
+      50%  { opacity: 1; scale: 1.02; translate: 0 -10px; }
+      72%  { scale: .99; translate: 0 4px; }
+      100% { opacity: 1; scale: 1; translate: 0 0; }
+    }
     @keyframes logo-pop {
       0%   { opacity: 0; scale: .3; rotate: -12deg; filter: grayscale(1) blur(4px); }
       45%  { opacity: 1; scale: 1.2; rotate: 4deg; filter: grayscale(0) blur(0); }

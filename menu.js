@@ -60,13 +60,13 @@ wrap?.addEventListener('toggle', () => {
 // Pop logos in each time they scroll into view, with a small stagger between neighbours
 if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
   document.documentElement.classList.add('io');
-  const logos = [...document.querySelectorAll('.role .logo img, .role .logo-name, .edu-logo')];
+  const logos = [...document.querySelectorAll('.role .logo img, .role .logo-name, .edu-logo, .gallery figure, .split > img, .contact-grid > img')];
   const io = new IntersectionObserver(entries => {
     let n = 0;
     entries.forEach(e => {
       if (e.isIntersecting) { e.target.style.animationDelay = (n++ * 90) + 'ms'; e.target.classList.add('in'); }
       else e.target.classList.remove('in');
     });
-  }, { threshold: 0.5 });
+  }, { threshold: 0.25 });
   logos.forEach(el => io.observe(el));
 }
