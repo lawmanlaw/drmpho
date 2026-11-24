@@ -57,11 +57,16 @@ wrap?.addEventListener('toggle', () => {
   if (wrap.open) setTimeout(() => wrap.querySelector('#cf-name')?.focus({ preventScroll: true }), 60);
 });
 
-// Animate logos into view in browsers that lack CSS scroll-driven animations
-if (!CSS.supports('animation-timeline: view()') && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+// Pop logos in each time they scroll into view, with a small stagger between neighbours
+if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
   document.documentElement.classList.add('io');
+  const logos = [...document.querySelectorAll('.role .logo img, .role .logo-name, .edu-logo')];
   const io = new IntersectionObserver(entries => {
-    entries.forEach(e => e.target.classList.toggle('in', e.isIntersecting));
-  }, { threshold: 0.4 });
-  document.querySelectorAll('.role .logo img, .role .logo-name, .edu-logo').forEach(el => io.observe(el));
+    let n = 0;
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.style.animationDelay = (n++ * 90) + 'ms'; e.target.classList.add('in'); }
+      else e.target.classList.remove('in');
+    });
+  }, { threshold: 0.5 });
+  logos.forEach(el => io.observe(el));
 }
