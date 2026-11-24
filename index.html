@@ -164,6 +164,8 @@
   /* Publications */
   .pubs { list-style: none; padding: 0; margin: 32px 0 0; display: grid; gap: 28px; }
   .pubs li { display: grid; grid-template-columns: minmax(160px, 220px) 1fr; gap: clamp(8px, 4vw, 48px); }
+  .pubs-head { font-size: clamp(19px, 1.05rem + .3vw, 22px); color: var(--muted); font-weight: 400; margin: 44px 0 0; }
+  .pubs .pub-title { margin: 0; font-family: "Lato", sans-serif; font-size: clamp(18px, 1rem + 0.3vw, 21px); color: var(--ink); }
   .pubs .year { font-family: "Lato", sans-serif; color: var(--muted); padding-top: 3px; }
   .pubs a { font-family: "Lato", sans-serif; font-size: clamp(18px, 1rem + 0.3vw, 21px); color: var(--ink); text-decoration-color: var(--sky); text-underline-offset: 4px; transition: color var(--fast) ease; }
   .pubs a:hover { color: var(--sky-deep); }
@@ -352,7 +354,7 @@
       <a href="#experience">Experience</a>
       <a href="#speaking">Speaking</a>
       <a href="#education">Education</a>
-      <a href="#publications">Publications</a>
+      <a href="#research">Research</a>
       <a href="#contact">Contact</a>
     </nav>
     <button class="menu-btn" popovertarget="menu" aria-label="Open menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
@@ -369,7 +371,7 @@
     <li><a href="#experience">Experience</a></li>
     <li><a href="#speaking">Speaking</a></li>
     <li><a href="#education">Education</a></li>
-    <li><a href="#publications">Publications</a></li>
+    <li><a href="#research">Research</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </div>
@@ -571,9 +573,10 @@
     </div>
   </section>
 
-  <section id="publications">
+  <section id="research">
     <div class="wrap">
-      <h2 class="reveal">Publications</h2>
+      <h2 class="reveal">Research</h2>
+      <h3 class="pubs-head reveal">Publications</h3>
       <ul class="pubs">
         <li class="reveal">
           <span class="year">2026</span>
@@ -583,11 +586,28 @@
             <span>Johns Hopkins Center for Global Women's Health and Gender Equity. Mentored fellowship research, 2025 to 2026 cohort</span>
           </div>
         </li>
+      </ul>
+      <h3 class="pubs-head reveal">Conferences</h3>
+      <ul class="pubs">
         <li class="reveal">
-          <span class="year">2021</span>
+          <span class="year">2026</span>
           <div>
-            <a href="https://co-impact.org/wp-content/uploads/2021/06/Co-Impact-Consultations-Report.pdf" rel="noopener noreferrer" target="_blank">What Does it Take to Transform Gendered Systems?</a>
-            <span>Co-Impact consultations report, informing the design of Co-Impact's Gender Fund. Contributing researcher with Global Office Consulting</span>
+            <p class="pub-title">SVRI Forum 2026</p>
+            <span>Presenter. Bangkok, Thailand, 5 to 9 October 2026</span>
+          </div>
+        </li>
+        <li class="reveal">
+          <span class="year">2026</span>
+          <div>
+            <a href="https://publichealth.jhu.edu/events/2026/03/23/evidence-in-focus-emerging-research-on-gender-equity-and-gender-based-violence" rel="noopener noreferrer" target="_blank">Evidence in Focus: Emerging Research on Gender Equity and Gender-Based Violence</a>
+            <span>Presenter. Johns Hopkins Bloomberg School of Public Health webinar, March 2026</span>
+          </div>
+        </li>
+        <li class="reveal">
+          <span class="year">&nbsp;</span>
+          <div>
+            <p class="pub-title">WomeninDev Conference</p>
+            <span>Panellist. London, United Kingdom</span>
           </div>
         </li>
       </ul>
