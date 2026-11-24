@@ -56,3 +56,12 @@ const wrap = document.querySelector('.cform-wrap');
 wrap?.addEventListener('toggle', () => {
   if (wrap.open) setTimeout(() => wrap.querySelector('#cf-name')?.focus({ preventScroll: true }), 60);
 });
+
+// Animate logos into view in browsers that lack CSS scroll-driven animations
+if (!CSS.supports('animation-timeline: view()') && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.documentElement.classList.add('io');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => e.target.classList.toggle('in', e.isIntersecting));
+  }, { threshold: 0.4 });
+  document.querySelectorAll('.role .logo img, .role .logo-name, .edu-logo').forEach(el => io.observe(el));
+}

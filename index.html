@@ -234,6 +234,17 @@
   .cform-status.err { color: #f2a7a7; }
   .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
 
+  /* Logo animation fallback for browsers without scroll-driven animations (Safari, Firefox) */
+  @media (prefers-reduced-motion: no-preference) {
+    html.io .role .logo img, html.io .role .logo-name, html.io .edu-logo {
+      opacity: 0; scale: .8; translate: -16px 0; filter: grayscale(1) blur(3px);
+      transition: opacity 700ms var(--ease-out), scale 700ms var(--ease-out), translate 700ms var(--ease-out), filter 900ms ease;
+    }
+    html.io .role .logo img.in, html.io .role .logo-name.in, html.io .edu-logo.in {
+      opacity: 1; scale: 1; translate: 0 0; filter: none;
+    }
+  }
+
   /* Motion tokens */
   :root {
     --ease-out: cubic-bezier(.22, 1, .36, 1);
