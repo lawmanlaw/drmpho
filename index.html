@@ -162,8 +162,11 @@
   .contact-grid img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 55% 50%; }
 
   footer { background: var(--ink); color: rgba(255,255,255,.6); font-family: "Lato", sans-serif; font-size: 14px; padding: 24px 0; }
-  .foot-link { color: rgba(255,255,255,.8); text-decoration: none; }
-  .foot-link:hover { color: var(--sky); }
+  .li-link { display: inline-flex; align-items: center; gap: 10px; color: rgba(255,255,255,.85); text-decoration: none; font-family: "Lato", sans-serif; font-size: 15px; transition: color var(--fast) ease, translate var(--base) var(--ease-out); }
+  .li-link svg { width: 22px; height: 22px; fill: currentColor; }
+  .li-link:hover { color: var(--sky); translate: 0 -2px; }
+  .li-link.big svg { width: 28px; height: 28px; }
+  .contact-actions { margin: 0 0 22px; }
   footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 
   .edu-logo { height: 48px; width: auto; margin-top: 12px; transform-origin: left center; transition: scale var(--base) var(--ease-out); }
@@ -613,6 +616,9 @@
       <div class="reveal">
         <h2>Work with Mpho</h2>
         <p>Engage Mpho for research, strategic advisory, social impact consultancy, training, facilitation and speaking that advance gender equality, inclusion, accountability and violence prevention.</p>
+        <div class="contact-actions">
+        <a class="li-link big" href="https://www.linkedin.com/in/mpho-elizabeth-mpofu" rel="noopener noreferrer me" target="_blank" aria-label="Connect with Dr Mpho Mpofu on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg><span>Connect on LinkedIn</span></a>
+        </div>
         <details class="cform-wrap">
           <summary class="btn">Send an email</summary>
           <form id="contact-form" class="cform" action="https://api.web3forms.com/submit" method="POST" novalidate>
@@ -639,7 +645,7 @@
 <footer>
   <div class="wrap">
     <span>Dr Mpho Elizabeth Mpofu</span>
-    <a class="foot-link" href="https://www.linkedin.com/in/mpho-elizabeth-mpofu" rel="noopener noreferrer me" target="_blank">LinkedIn</a>
+    <a class="li-link" href="https://www.linkedin.com/in/mpho-elizabeth-mpofu" rel="noopener noreferrer me" target="_blank" aria-label="Dr Mpho Mpofu on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
   </div>
 </footer>
 
