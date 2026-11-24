@@ -177,14 +177,21 @@
   .pubs li { display: grid; grid-template-columns: minmax(160px, 220px) 1fr; gap: clamp(8px, 4vw, 48px); }
   .pubs-head { font-size: clamp(19px, 1.05rem + .3vw, 22px); color: var(--muted); font-weight: 400; margin: 44px 0 0; }
   .pubs .pub-title { margin: 0; font-family: "Lato", sans-serif; font-size: clamp(18px, 1rem + 0.3vw, 21px); color: var(--ink); }
-  .research-intro { max-width: 68ch; margin: 8px 0 8px; }
+  .research-intro { max-width: none; margin: 8px 0 8px; }
+  ol.pubs { counter-reset: pub; }
+  ol.pubs > li { counter-increment: pub; grid-template-columns: 2.4em 1fr; gap: 12px; }
+  ol.pubs > li::before { content: counter(pub) "."; font-family: "Lato", sans-serif; font-size: clamp(18px, 1rem + 0.3vw, 21px); color: var(--sky-deep); }
+  ol.pubs li span:not(.year) { max-width: none; }
+  .pubs a.read-link { font-size: 15px; color: var(--sky-deep); }
+  .read-link { display: inline-block; margin-top: 10px; font-family: "Lato", sans-serif; font-weight: 700; color: var(--sky-deep); text-underline-offset: 4px; }
+  .read-link:hover { color: var(--ink); }
   .research-intro h3 { font-size: clamp(19px, 1.05rem + .3vw, 22px); margin-bottom: 12px; }
   .research-intro p { margin: 0 0 14px; }
   .pubs .year { font-family: "Lato", sans-serif; color: var(--muted); padding-top: 3px; }
   .pubs a { font-family: "Lato", sans-serif; font-size: clamp(18px, 1rem + 0.3vw, 21px); color: var(--ink); text-decoration-color: var(--sky); text-underline-offset: 4px; transition: color var(--fast) ease; }
   .pubs a:hover { color: var(--sky-deep); }
   .pubs li span:not(.year) { display: block; margin-top: 6px; color: var(--muted); max-width: 62ch; }
-  @media (max-width: 860px) { .pubs li { grid-template-columns: 1fr; gap: 4px; } }
+  @media (max-width: 860px) { .pubs li { grid-template-columns: 1fr; gap: 4px; } ol.pubs > li { grid-template-columns: 1.8em 1fr; gap: 6px; } }
 
   /* Loading splash */
   .splash {
@@ -597,16 +604,22 @@
         <p>My research examines how social norms, institutional power and intersecting inequalities shape lived experiences, access to services and the realisation of rights. Drawing on sociological and critical perspectives, I explore gender, sexuality, heteronormativity, health inequalities and violence prevention, with a particular interest in how institutions reproduce or challenge social exclusion in African contexts.</p>
         <p>My work brings together qualitative inquiry, critical theory and practice-based evidence to inform scholarship, policy and institutional change.</p>
       </div>
-      <ul class="pubs">
+      <ol class="pubs">
         <li class="reveal">
-          <span class="year">2026</span>
           <div>
-            <!-- TODO: replace link text with the exact title of the PDF -->
-            <a href="https://publichealth.jhu.edu/sites/default/files/2026-04/Mpho_FINAL.pdf" rel="noopener noreferrer" target="_blank">Gender Equity/GBV Evidence Accelerator Fellowship project</a>
-            <span>Johns Hopkins Center for Global Women's Health and Gender Equity. Mentored fellowship research, 2025 to 2026 cohort</span>
+            <p class="pub-title">Moving Beyond Decriminalisation: Understanding LGBTQIA+ Experiences in Botswana Post-2019</p>
+            <span>This research examines the extent to which legal decriminalisation has translated into meaningful social inclusion for LGBTQIA+ people in Botswana. Drawing on a review of literature and reports published since 2019, it explores how religion, patriarchy, heteronormativity and cultural narratives shape experiences of rights, recognition and inclusion. The research highlights the need to move beyond legal reform towards broader institutional accountability and social change.</span>
+            <a class="read-link" href="https://publichealth.jhu.edu/sites/default/files/2026-04/Mpho_FINAL.pdf" rel="noopener noreferrer" target="_blank">Read the full policy brief</a>
           </div>
         </li>
-      </ul>
+        <li class="reveal">
+          <div>
+            <p class="pub-title">Preventing Violence Against Women and Girls in 2022: Listening and Learning from the Sector</p>
+            <span>This report captures insights from 15 consultations with more than 200 practitioners, researchers, funders and other stakeholders working to prevent violence against women and girls globally. It examines challenges and opportunities relating to evidence generation and use, funding, and collective action, highlighting the importance of accessible evidence, sustained investment and stronger partnerships to advance effective, locally grounded violence prevention.</span>
+            <a class="read-link" href="https://www.datocms-assets.com/112720/1711896924-1709557076-listening-and-learning-v6-1.pdf" rel="noopener noreferrer" target="_blank">Read the full report</a>
+          </div>
+        </li>
+      </ol>
     </div>
   </section>
 
