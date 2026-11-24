@@ -139,7 +139,9 @@
   /* Experience */
   .roles { display: grid; gap: 40px; margin-top: 40px; }
   .role { display: grid; grid-template-columns: minmax(160px, 220px) 1fr; gap: clamp(8px, 4vw, 48px); }
-  .role .when { font-family: "Lato", sans-serif; font-size: 15px; padding-top: 4px; color: var(--muted); }
+  .role .logo { display: flex; align-items: flex-start; padding-top: 2px; }
+  .role .logo img { height: 52px; width: auto; max-width: 180px; object-fit: contain; object-position: left center; }
+  .role .logo-name { font-family: "Lato", sans-serif; font-weight: 700; color: var(--ink); font-size: 17px; }
   .role h3 { font-size: clamp(19px, 1.05rem + 0.3vw, 22px); }
   .role .org { font-family: "Lato", sans-serif; color: var(--sky-deep); margin: 2px 0 8px; }
   .role p { margin: 0; max-width: 62ch; }
@@ -314,7 +316,8 @@
     .split, .two, .contact-grid { grid-template-columns: 1fr; }
     .contact-grid img { max-width: 440px; }
     .split > img { max-width: 440px; }
-    .role { grid-template-columns: 1fr; gap: 4px; }
+    .role { grid-template-columns: 1fr; gap: 12px; }
+    .role .logo img { height: 40px; }
   }
   @media (max-width: 700px) {
     .gallery { grid-template-columns: 1fr; grid-template-rows: auto; }
@@ -464,10 +467,10 @@
 
   <section id="experience">
     <div class="wrap">
-      <h2 class="reveal">Experience</h2>
+      <h2 class="reveal">Experience and Consultancies</h2>
       <div class="roles">
         <div class="role">
-          <div class="when">Feb 2022 to present</div>
+          <div class="logo"><img src="img/logo-raisingvoices.webp" width="280" height="120" alt="Raising Voices" loading="lazy" decoding="async"></div>
           <div>
             <h3>Senior Accountability Advisor</h3>
             <div class="org">Raising Voices, Kampala (remote)</div>
@@ -475,7 +478,7 @@
           </div>
         </div>
         <div class="role">
-          <div class="when">Oct 2020 to Jan 2022</div>
+          <div class="logo"><img src="img/logo-globaloffice.webp" width="99" height="120" alt="Global Office Consulting" loading="lazy" decoding="async"></div>
           <div>
             <h3>Senior Account Manager</h3>
             <div class="org">Global Office Consulting, London</div>
@@ -483,7 +486,7 @@
           </div>
         </div>
         <div class="role">
-          <div class="when">Sep 2017 to Aug 2019</div>
+          <div class="logo"><img src="img/logo-actionaid.webp" width="538" height="80" alt="ActionAid" loading="lazy" decoding="async"></div>
           <div>
             <h3>Gender Response Advisor</h3>
             <div class="org">ActionAid, Uganda</div>
@@ -491,7 +494,7 @@
           </div>
         </div>
         <div class="role">
-          <div class="when">Jan 2017 to Oct 2020</div>
+          <div class="logo"><img src="img/logo-wbfa.webp" width="465" height="120" alt="Wellbeing Foundation Africa" loading="lazy" decoding="async"></div>
           <div>
             <h3>Youth Contributor</h3>
             <div class="org">Wellbeing for Women Africa</div>
@@ -499,9 +502,9 @@
           </div>
         </div>
         <div class="role">
-          <div class="when">Sep 2014 to Dec 2021</div>
+          <div class="logo"><!-- TODO: add The Voice of Africa logo --><span class="logo-name">The Voice of Africa</span></div>
           <div>
-            <h3>Founder, and Executive Director until 2017</h3>
+            <h3>Founder and Executive Director</h3>
             <div class="org">The Voice of Africa, Bulawayo</div>
             <p>Founded a youth-led organisation providing youth consulting services, and coordinated its strategy and innovation.</p>
           </div>
