@@ -70,3 +70,7 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
   }, { threshold: 0.25 });
   logos.forEach(el => io.observe(el));
 }
+
+// Keep the footer year current (2027 at the earliest)
+const yr = document.getElementById('year');
+if (yr) yr.textContent = Math.max(2027, new Date().getFullYear());
