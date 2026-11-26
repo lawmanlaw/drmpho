@@ -167,7 +167,12 @@
   .li-link:hover { color: var(--sky); translate: 0 -2px; }
   .li-link.big svg { width: 28px; height: 28px; }
   .contact-actions { margin: 0 0 22px; }
-  footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .credit { display: inline-flex; align-items: center; gap: 12px; color: rgba(255,255,255,.85); text-decoration: none; font-family: "Lato", sans-serif; font-size: 15px; transition: color var(--fast) ease; }
+  .credit span { white-space: nowrap; }
+  .credit img { height: 40px; width: auto; transition: scale var(--base) var(--ease-out); }
+  .credit:hover { color: var(--sky); }
+  .credit:hover img { scale: 1.05; }
+  footer .wrap { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
 
   .edu-logo { height: 48px; width: auto; margin-top: 12px; transform-origin: left center; transition: scale var(--base) var(--ease-out); }
   .list li:hover .edu-logo { scale: 1.06; }
@@ -378,7 +383,8 @@
     .lede { margin-bottom: 26px; }
     .btn { display: block; text-align: center; }
     .hero .btn, .contact .btn { display: inline-block; }
-    footer .wrap { justify-content: center; text-align: center; }
+    footer .wrap { justify-content: center; text-align: center; flex-direction: column; }
+    .credit { flex-wrap: wrap; justify-content: center; row-gap: 6px; }
   }
   @media (hover: none) {
     .btn:hover, .split:hover > img, .gallery figure:hover img, .feature:hover svg, .focus-grid > div:hover svg { transform: none; }
@@ -658,6 +664,11 @@
 <footer>
   <div class="wrap">
     <span>Dr Mpho Elizabeth Mpofu</span>
+    <a class="credit" href="https://wa.me/26774018692" rel="noopener noreferrer" target="_blank" aria-label="Website by Jane Enterprise Digital. Message on WhatsApp, +267 74 018 692">
+      <span>Website by</span>
+      <img src="img/jane-enterprise.svg" width="140" height="44" alt="Jane Enterprise Digital" loading="lazy" decoding="async">
+      <span>WhatsApp +267 74 018 692</span>
+    </a>
     <a class="li-link" href="https://www.linkedin.com/in/mpho-elizabeth-mpofu" rel="noopener noreferrer me" target="_blank" aria-label="Dr Mpho Mpofu on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
   </div>
 </footer>
